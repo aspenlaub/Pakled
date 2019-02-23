@@ -1,7 +1,7 @@
 #load "solution.cake"
 #addin nuget:?package=Cake.Git&version=0.19.0
 #addin nuget:?package=System.Runtime.Loader&version=4.0.0.0
-#addin nuget:https://www.aspenlaub.net/nuget/?package=Aspenlaub.Net.GitHub.CSharp.Fusion&loaddependencies=true&version=1.0.6993.23684
+#addin nuget:https://www.aspenlaub.net/nuget/?package=Aspenlaub.Net.GitHub.CSharp.Fusion&loaddependencies=true&version=1.0.6989.35390
 
 using Regex = System.Text.RegularExpressions.Regex;
 using Microsoft.Extensions.DependencyInjection;
@@ -85,16 +85,18 @@ Task("UpdateBuildCake")
     if (Regex.Replace(oldContents, @"\s", "") != Regex.Replace(System.IO.File.ReadAllText(tempCakeBuildFileName), @"\s", "")) {
       System.IO.File.Delete(buildCakeFileName);
       System.IO.File.Move(tempCakeBuildFileName, buildCakeFileName); 
-	    var autoErrorsAndInfos = new ErrorsAndInfos();
-      container.Resolve<IAutoCommitterAndPusher>().AutoCommitAndPushSingleCakeFileAsync(new Folder(repositoryFolder), autoErrorsAndInfos).Wait();
+      var autoErrorsAndInfos = new ErrorsAndInfos();
+      container.Resolve<IAutoCommitterAndPusher>().AutoCommitAndPushSingleCakeFileAsync(new Folder(repositoryFolder)).Wait();
+      // container.Resolve<IAutoCommitterAndPusher>().AutoCommitAndPushSingleCakeFileAsync(new Folder(repositoryFolder), autoErrorsAndInfos).Wait();
       if (autoErrorsAndInfos.Errors.Any()) {
         throw new Exception(autoErrorsAndInfos.ErrorsToString());
       }
       throw new Exception("Your build.cake file has been updated. Please retry running it.");
     } else {
       System.IO.File.Delete(tempCakeBuildFileName);
-	    var autoErrorsAndInfos = new ErrorsAndInfos();
-      container.Resolve<IAutoCommitterAndPusher>().AutoCommitAndPushSingleCakeFileAsync(new Folder(repositoryFolder), autoErrorsAndInfos).Wait();
+      var autoErrorsAndInfos = new ErrorsAndInfos();
+      container.Resolve<IAutoCommitterAndPusher>().AutoCommitAndPushSingleCakeFileAsync(new Folder(repositoryFolder)).Wait();
+      // container.Resolve<IAutoCommitterAndPusher>().AutoCommitAndPushSingleCakeFileAsync(new Folder(repositoryFolder), autoErrorsAndInfos).Wait();
       if (autoErrorsAndInfos.Errors.Any()) {
         throw new Exception(autoErrorsAndInfos.ErrorsToString());
       }
@@ -247,9 +249,9 @@ Task("RunTestsOnDebugArtifacts")
         if (projectErrorsAndInfos.Errors.Any()) {
             throw new Exception(projectErrorsAndInfos.ErrorsToString());
         }
-		if (projectLogic.TargetsOldFramework(project)) {
+        if (projectLogic.TargetsOldFramework(project)) {
             throw new Exception(".Net frameworks 4.6 and 4.5 are no longer supported");
-		}
+        }
         Information("Running tests in " + projectFile.FullPath);
         var logFileName = testResultsFolder + @"/TestResults-"  + project.ProjectName + ".trx";
         var dotNetCoreTestSettings = new DotNetCoreTestSettings {
@@ -295,9 +297,9 @@ Task("RunTestsOnReleaseArtifacts")
         if (projectErrorsAndInfos.Errors.Any()) {
             throw new Exception(projectErrorsAndInfos.ErrorsToString());
         }
-		if (projectLogic.TargetsOldFramework(project)) {
+        if (projectLogic.TargetsOldFramework(project)) {
             throw new Exception(".Net frameworks 4.6 and 4.5 are no longer supported");
-		}
+        }
         Information("Running tests in " + projectFile.FullPath);
         var logFileName = testResultsFolder + @"/TestResults-"  + project.ProjectName + ".trx";
         var dotNetCoreTestSettings = new DotNetCoreTestSettings { 
