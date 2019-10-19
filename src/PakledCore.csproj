@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <AssemblyName>Aspenlaub.Net.GitHub.CSharp.PakledCore</AssemblyName>
     <RootNamespace>Aspenlaub.Net.GitHub.CSharp.PakledCore</RootNamespace>
     <GenerateBuildInfoConfigFile>false</GenerateBuildInfoConfigFile>
@@ -17,11 +17,6 @@
     <Compile Remove="Test\**" />
     <EmbeddedResource Remove="Test\**" />
     <None Remove="Test\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System">
-      <HintPath>System</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="4.9.4" />
