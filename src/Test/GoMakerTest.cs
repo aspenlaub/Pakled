@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Aspenlaub.Net.GitHub.CSharp.PakledCore.Test {
+namespace Aspenlaub.Net.GitHub.CSharp.Pakled.Test {
     [TestClass]
     public class GoMakerTest {
         private readonly IContainer vContainer;

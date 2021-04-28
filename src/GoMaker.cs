@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Aspenlaub.Net.GitHub.CSharp.PakledCore {
+namespace Aspenlaub.Net.GitHub.CSharp.Pakled {
     public class GoMaker : IGoMaker {
         public void MakeItGo(IThing thing) {
             thing.State = ThingState.Fixed;
