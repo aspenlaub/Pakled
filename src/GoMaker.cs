@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json;
 
 namespace Aspenlaub.Net.GitHub.CSharp.Pakled;
 
@@ -14,7 +14,7 @@ public class GoMaker : IGoMaker {
     }
 
     private string Disassemble(IThing thing) {
-        var disassembledThing = JsonConvert.SerializeObject(thing);
+        var disassembledThing = JsonSerializer.Serialize(thing);
         const string propertyName = nameof(thing.State);
         const int brokenState = (int)ThingState.Broken;
         const int fixedState = (int)ThingState.Fixed;
@@ -22,6 +22,6 @@ public class GoMaker : IGoMaker {
     }
 
     private Thing Reassemble(string disassembledThing) {
-        return JsonConvert.DeserializeObject<Thing>(disassembledThing);
+        return JsonSerializer.Deserialize<Thing>(disassembledThing);
     }
 }
