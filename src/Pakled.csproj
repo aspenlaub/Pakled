@@ -29,11 +29,15 @@
   <ItemGroup>
     <None Remove="packageicon.ico" />
     <None Remove="packageicon.png" />
+    <None Remove="version.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packageicon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="version.json" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="7.1.0" />
