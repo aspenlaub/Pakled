@@ -1,9 +1,9 @@
 #load "solution.cake"
 #addin nuget:?package=LibGit2Sharp&version=0.30.0
-#addin nuget:?package=Cake.Git&version=4.0.0
+#addin nuget:?package=Cake.Git&version=5.0.0
 #addin nuget:?package=System.Runtime.Loader
 #addin nuget:?package=Microsoft.Bcl.AsyncInterfaces
-#addin nuget:?package=Fusion-DotnetNine&loaddependencies=true&version=2.0.1966.1338
+#addin nuget:?package=Fusion-DotnetNine&loaddependencies=true&version=2.0.1986.482
 
 using Regex = System.Text.RegularExpressions.Regex;
 using Microsoft.Extensions.DependencyInjection;
