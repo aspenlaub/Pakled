@@ -29,7 +29,6 @@
   <ItemGroup>
     <None Remove="packageicon.ico" />
     <None Remove="packageicon.png" />
-    <None Remove="version.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packageicon.png">
@@ -37,10 +36,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="version.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Autofac" Version="8.1.1" />
-    <PackageReference Include="System.Text.Json" Version="9.0.3" />
+    <PackageReference Include="Autofac" Version="8.2.1" />
+    <PackageReference Include="System.Text.Json" Version="9.0.4" />
   </ItemGroup>
 </Project>
