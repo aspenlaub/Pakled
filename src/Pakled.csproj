@@ -11,7 +11,7 @@
     <AssemblyProduct>Aspenlaub.Net.GitHub.CSharp.Pakled</AssemblyProduct>
     <VersionDays>$([System.DateTime]::UtcNow.Subtract($([System.DateTime]::Parse("2019-07-24"))).Days.ToString())</VersionDays>
     <VersionMinutes>$([System.Math]::Floor($([System.DateTime]::UtcNow.Subtract($([System.DateTime]::UtcNow.Date)).TotalMinutes)).ToString())</VersionMinutes>
-    <Version>2.0.$(VersionDays).$(VersionMinutes)</Version>
+    <Version>2.4.$(VersionDays).$(VersionMinutes)</Version>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/aspenlaub/Pakled.git</RepositoryUrl>
     <RepositoryBranch>master</RepositoryBranch>
