@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <AssemblyName>Aspenlaub.Net.GitHub.CSharp.Pakled</AssemblyName>
     <RootNamespace>Aspenlaub.Net.GitHub.CSharp.Pakled</RootNamespace>
     <GenerateBuildInfoConfigFile>false</GenerateBuildInfoConfigFile>
@@ -37,6 +37,6 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="8.2.1" />
-    <PackageReference Include="System.Text.Json" Version="9.0.10" />
+    <PackageReference Include="System.Text.Json" Version="10.0.0" />
   </ItemGroup>
 </Project>
