@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="PakledCore.csproj" />
+  <Project Path="Test/PakledCore.Test.csproj" />
+</Solution>
