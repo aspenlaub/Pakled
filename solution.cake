@@ -1,4 +1,4 @@
-var solution = "./src/PakledCore.sln";
+var solution = "./src/PakledCore.slnx";
 var masterDebugBinFolder = "../PakledCoreBin/Debug";
 var masterReleaseBinFolder = "../PakledCoreBin/Release";
 var solutionSpecialSettingsDictionary = new Dictionary<string, string> {
