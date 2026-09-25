@@ -37,6 +37,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="9.3.2" />
+    <PackageReference Include="Autofac" Version="9.3.4" />
   </ItemGroup>
 </Project>
